@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# eval_crossdata.yaml — cross-dataset evaluation (Celeb-DF / DFDC)
+# Train on FF++, test on unseen manipulations/datasets.
+# ---------------------------------------------------------------------------
+defaults: base
+
+evaluation:
+  checkpoint: results/checkpoints/best.pt
+  datasets: [celebdf, dfdc]
+  batch_size: 32
+  threshold: 0.5
+  save_figures: true
+  robustness:
+    enabled: true
+    perturbations: [clean, jpeg_q70, jpeg_q50, blur_k7, noise_sigma12]
+    max_samples: 512
+
+data:
+  faces_dir: data/faces
+  splits_dir: data/splits

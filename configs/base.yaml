@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------------------
+# base.yaml — shared settings (seed, paths, image size, batch size)
+# ---------------------------------------------------------------------------
+seed: 42
+
+data:
+  image_size: 380
+  num_workers: 4
+  raw_dir: data/raw
+  frames_dir: data/frames
+  faces_dir: data/faces
+  splits_dir: data/splits
+
+paths:
+  checkpoints: results/checkpoints
+  figures: results/figures
+  tables: results/tables
+
+train:
+  batch_size: 16
+  epochs: 20
+  amp: true
+  loss: bce
+  fake_weight: 1.4
+  early_stopping_patience: 5
+  optimizer:
+    name: adam
+    lr: 0.0003
+    weight_decay: 0.0
+
+eval:
+  batch_size: 32
+  threshold: 0.5
+
+model:
+  name: resnet_gap        # resnet_gap | srm | gwap  (see src/models/registry.py)
+  encoder: tf_efficientnet_b7_ns
+  dropout_rate: 0.0

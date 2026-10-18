@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# train_ffpp.yaml — train on FaceForensics++
+# Merged on top of configs/base.yaml (run: python -m src.training.train --config configs/train_ffpp.yaml)
+# ---------------------------------------------------------------------------
+defaults: base
+
+data:
+  dataset: ffpp
+  faces_dir: data/faces/ffpp
+  splits_dir: data/splits
+
+train:
+  batch_size: 16
+  epochs: 30
+  loss: bce
+  fake_weight: 1.4
+  optimizer:
+    name: adamw
+    lr: 0.0002
+    weight_decay: 0.0001
+
+model:
+  name: resnet_gap
+  encoder: tf_efficientnet_b7_ns
+  dropout_rate: 0.0

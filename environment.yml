@@ -1,0 +1,30 @@
+name: deepfake-detection
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  - pyyaml
+  - opencv
+  - scikit-learn
+  - scikit-image
+  - pytest
+  - pip:
+      # CPU-only PyTorch: replace with the CUDA wheel if you have an NVIDIA GPU
+      - torch==2.5.1
+      - torchvision==0.20.1
+      - torchaudio==2.5.1
+      - timm==1.0.30
+      - efficientnet-pytorch==0.7.1
+      - facenet-pytorch==2.5.2
+      - albumentations==1.4.3
+      - Flask==3.0.3
+      - Flask-Cors==4.0.0
+      - imageio==2.36.0
+      - tqdm==4.66.4
+      - typing-extensions==4.12.2

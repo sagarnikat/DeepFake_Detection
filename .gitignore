@@ -1,1 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
 
+# Downloaded model weights (large binaries, fetch with ./scripts/download_weights.sh)
+weights/
+
+# Datasets (keep the directory skeletons, ignore their contents)
+data/raw/*
+data/frames/*
+data/faces/*
+data/splits/*
+!data/raw/.gitkeep
+!data/frames/.gitkeep
+!data/faces/.gitkeep
+!data/splits/.gitkeep
+
+# Experiment outputs (keep skeletons + the committed baseline report)
+results/checkpoints/*
+results/figures/*
+results/tables/*
+!results/checkpoints/.gitkeep
+!results/figures/.gitkeep
+!results/tables/.gitkeep
+!results/figures/prediction_graph.png
+!results/tables/predictions.json
+
+# Runtime artefacts
+uploads/
+dist/
+node_modules/
+app/frontend/node_modules/
+app/frontend/dist/
+*.bak
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,43 +1,54 @@
-# ------------------------------
-# Core Web Server
-# ------------------------------
+# ---------------------------------
+# Core Web Server / Demo
+# ---------------------------------
 Flask==3.0.3
 Flask-Cors==4.0.0
+# gradio>=4.44          # optional: only needed for `python -m app.demo`
 
-# ------------------------------
-# Deep Learning + CUDA
-# ------------------------------
+# ---------------------------------
+# Deep Learning (torch)
+# ---------------------------------
+# Install the CPU-only wheel on machines without an NVIDIA GPU:
+#   pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 \
+#       --index-url https://download.pytorch.org/whl/cpu
 torch==2.5.1
 torchvision==0.20.1
 torchaudio==2.5.1
 
-# ------------------------------
+# ---------------------------------
 # Computer Vision
-# ------------------------------
+# ---------------------------------
 opencv-python==4.12.0.88
 Pillow==11.3.0
 facenet-pytorch==2.5.2
 
-# ------------------------------
-# Augmentation
-# ------------------------------
+# ---------------------------------
+# Augmentation / preprocessing
+# ---------------------------------
 albumentations==1.4.3
 scikit-image==0.24.0
 imageio==2.36.0
 
-# ------------------------------
-# Utility
-# ------------------------------
+# ---------------------------------
+# Metrics / evaluation / config
+# ---------------------------------
+scikit-learn==1.5.2
+PyYAML==6.0.2
+pandas==2.2.3
+matplotlib==3.9.2
 numpy==2.2.6
 tqdm==4.66.4
 
-# ------------------------------
-# Model Encoder dependency
-# ------------------------------
+# ---------------------------------
+# Model encoders (EfficientNet via timm)
+# ---------------------------------
+# `timm` provides the encoders used by src/models/backbone.py.
+timm==1.0.30
 efficientnet-pytorch==0.7.1
 
-# ------------------------------
-# Other helpful libs (optional)
-# ------------------------------
+# ---------------------------------
+# Testing / tooling
+# ---------------------------------
+pytest==8.3.3
 requests==2.32.3
 typing-extensions==4.12.2
